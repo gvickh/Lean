@@ -85,7 +85,7 @@ namespace QuantConnect.Lean.Engine.DataFeeds
                         reader = new LocalFileSubscriptionStreamReader(_dataCacheProvider, source.Source);
                         break;
                     case SubscriptionTransportMedium.RemoteFile:
-                        reader = new RemoteFileSubscriptionStreamReader(_dataCacheProvider, source.Source, Globals.Cache, _date);
+                        reader = new RemoteFileSubscriptionStreamReader(_dataCacheProvider, source.Source, Globals.Cache);
                         break;
                 }
 
