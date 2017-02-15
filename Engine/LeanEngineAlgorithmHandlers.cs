@@ -200,7 +200,7 @@ namespace QuantConnect.Lean.Engine
             var commandQueueHandlerTypeName = Config.Get("command-queue-handler", "EmptyCommandQueueHandler");
             var mapFileProviderTypeName = Config.Get("map-file-provider", "LocalDiskMapFileProvider");
             var factorFileProviderTypeName = Config.Get("factor-file-provider", "LocalDiskFactorFileProvider");
-            var fileProviderTypeName = Config.Get("data-file-provider", "DefaultDataProvider");
+            var fileProviderTypeName = Config.Get("data-provider", "DefaultDataProvider");
 
             return new LeanEngineAlgorithmHandlers(
                 composer.GetExportedValueByTypeName<IResultHandler>(resultHandlerTypeName),
