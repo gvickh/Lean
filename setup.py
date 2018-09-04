@@ -16,7 +16,7 @@
 
 import os
 import sys
-from shutil import which, copyfile
+from shutil import which, copy
 from subprocess import check_output, CalledProcessError
 
 MACOS = sys.platform == "darwin"
@@ -181,7 +181,7 @@ def update_package_dll(shared, target):
             path = os.path.dirname(os.path.dirname(target))
             file = os.path.join(path, 'build', f'Python.Runtime.{suffix}')
 
-        copyfile(file, target)
+        copy(file, target)	# was copyfile but failed due shutil.SameFileError exception
 
         exit('Please REBUILD Lean solution to complete pythonnet setup.')
 
